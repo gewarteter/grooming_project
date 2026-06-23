@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сервис записи на груминг</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+        table{
+            border-collapse: collapse;
+            width: 900px;
+        }
+        th{
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #000
+        }
+        tr{
+            border: 1px solid #000
+        }
+        td{
+            border: 1px solid #000
+            text-align: center;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Список записей на груминг</h1>
+    <table border="1">
+        <tr>
+            <th>Клиент</th>
+            <th>Питомец</th>
+            <th>Мастер</th>
+            <th>Услуга</th>
+            <th>Дата и время</th>
+        </tr>
+        {% for a in appointments %}
+            <tr>
+                <td>{{ a.client.name }}</td>
+                <td>{{ a.pet.name }}</td>
+                <td>{{ a.master.name }}</td>
+                <td>{{ a.service.name }}</td>
+                <td>{{ a.date }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
