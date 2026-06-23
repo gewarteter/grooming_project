@@ -10,7 +10,7 @@ class Pet(models.Model):
     age = models.IntegerField()
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     
-class Service(model.Model):
+class Service(models.Model):
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     duration = models.IntegerField()
